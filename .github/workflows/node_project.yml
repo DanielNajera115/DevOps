@@ -12,6 +12,7 @@ jobs:
         node-version: [16.3]
         
     steps:
+    
     - run: cd ./capstone_project/hello-world/
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
