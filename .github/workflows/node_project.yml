@@ -6,6 +6,8 @@ on:
     branches: [ main ]
 jobs:
   test:
+    env:
+      working-directory: ./capstone_project/hello-world/
     runs-on: ubuntu-latest
     strategy:
       matrix:
