@@ -6,14 +6,14 @@ on:
     branches: [ main ]
 jobs:
   test:
+    env:
+      working-directory: ./capstone_project/hello-world/
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [16.3]
+        node-version: [16.x]
         
     steps:
-    
-    - run: cd ./capstone_project/hello-world/
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
