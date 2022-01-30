@@ -9,13 +9,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      working-directory: ./capstone_project/hello-world/ 
     strategy:
       matrix:
         node-version: [13.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
+    env:
+      working-directory: ./capstone_project/hello-world/ 
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
