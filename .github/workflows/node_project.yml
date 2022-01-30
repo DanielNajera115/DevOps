@@ -21,7 +21,6 @@ jobs:
           node-version: 16.3.1
           working-directory: ${{env.working-directory}}
 
-      # Install dependencies21
       - run: npm install
         working-directory: ${{env.working-directory}}
 
