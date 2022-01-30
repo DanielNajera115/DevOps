@@ -23,12 +23,12 @@ jobs:
         
         with:
           node-version: 16.x
-          working-directory: ${{env.working-directory}}
+
 
       # Install dependencies21231234
       - run: npm install
-        working-directory: ${{env.working-directory}}
+
 
       # Run tests
       - run: npm test
-        working-directory: ${{env.working-directory}}
+        
