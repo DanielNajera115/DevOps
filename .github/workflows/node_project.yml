@@ -1,5 +1,5 @@
 name: Node Project
-on:
+on: 
   push:
     branches: [ main ]
   pull_request:
@@ -23,8 +23,9 @@ jobs:
         
         with:
           node-version: 16.3.1
+          working-directory: ${{env.working-directory}}
 
-
+      # Install dependencies21231234
       - run: npm install
         working-directory: ${{env.working-directory}}
 
