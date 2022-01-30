@@ -1,5 +1,5 @@
 name: Node Project
-on:
+on: 
   push:
     branches: [ main ]
   pull_request:
@@ -8,26 +8,27 @@ on:
 defaults:
   run:
     working-directory: ./capstone_project/hello-world
-
 jobs:
-  test:
+  tests:
     runs-on: ubuntu-latest
     env: 
       working-directory: ./capstone_project/hello-world
-    strategy:
-      matrix:
-        node-version: [16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-      env:
-        CI: true
-    - run: npm install
-      working-directory: ${{env.working-directory}}
-    - run: npm run test
-      working-directory: ${{env.working-directory}}
+      # Checkout the Repo
+      - uses: actions/checkout@v2
+
+      # Install Node 12
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        
+        with:
+          node-version: 16.x
+          working-directory: ${{env.working-directory}}
+
+      # Install dependencies21231234
+      - run: npm install
+        working-directory: ${{env.working-directory}}
+
+      # Run tests
+      - run: npm test
+        working-directory: ${{env.working-directory}}
