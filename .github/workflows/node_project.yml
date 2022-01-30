@@ -2,7 +2,8 @@ name: Node project
 on: pull_request
 jobs:
   tests:
-  
+    env:
+      working-directory: ./capstone_project/hello-world/ 
     runs-on: ubuntu-latest
     steps:
       # Checkout the Repo
