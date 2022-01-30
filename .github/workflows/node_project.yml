@@ -1,5 +1,7 @@
 name: Node Project
-on: 
+on:
+  push:
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 
