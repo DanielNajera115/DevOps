@@ -16,9 +16,10 @@ jobs:
         node-version: [16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/ s
     steps:
-    - run: echo "here ls"; ls
-    - run: pwd
     - uses: actions/checkout@v2
+    - run: ls -r
+      working-directory: ${{env.working-directory}}
+    - run: pwd
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
