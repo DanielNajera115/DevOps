@@ -1,5 +1,9 @@
-name: CI
+name: Node Project
 on: pull_request
+
+defaults:
+  run:
+    working-directory: ./capstone_project/hello-world
 jobs:
   tests:
     runs-on: ubuntu-latest
