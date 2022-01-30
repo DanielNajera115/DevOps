@@ -12,6 +12,8 @@ defaults:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env: 
+      working-directory: ./capstone_project/hello-world
     strategy:
       matrix:
         node-version: [16.x]
@@ -26,4 +28,6 @@ jobs:
       env:
         CI: true
     - run: npm install
+      working-directory: ${{env.working-directory}}
     - run: npm run test
+      working-directory: ${{env.working-directory}}
