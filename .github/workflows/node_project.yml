@@ -26,5 +26,5 @@ jobs:
       - run: npm ci
 
       - run: npm test
-      - run: echo "hello"
+      - run: docker build . -t node-project
         
